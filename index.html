@@ -12,14 +12,17 @@
     <datalist id = 'locationList'>
         {{#each locationOption}}
         <option>
-            {{artistLocation}}
+            {{this}}
         </option>
         {{/each}}
     </datalist>
     <datalist id = 'genreList'>
+        <option>
+            Select Genre..
+        </option>
         {{#each genreOption}}
         <option>
-            {{artistGenre}}
+            {{this}}
         </option>
         {{/each}}
     </datalist>
@@ -77,9 +80,9 @@
 <iframe frameborder="0" width="100%" height="240" scrolling="no" src="https://embed.traxsource.com/player/track/4218170"></iframe>
     <h4>Soulful House</h4>
 <iframe frameborder="0" width="100%" height="240" scrolling="no" src="https://embed.traxsource.com/player/track/2973736"></iframe>
-</footer>
     <h4>Afro House</h4>
 <iframe frameborder="0" width="100%" height="240" scrolling="no" src="https://embed.traxsource.com/player/track/4258373"></iframe>
+</footer>
     
 </body>
     <script src = 'my_Artist.js' charset = 'utf-8'></script>

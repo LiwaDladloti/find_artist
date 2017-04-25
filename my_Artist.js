@@ -38,9 +38,36 @@ var dropDownTemp = Handlebars.compile(dropDowntemplate);
 var tableTemplate = document.querySelector('.tableTemp').innerHTML;
 var tableTemp = Handlebars.compile(tableTemplate);
 
-document.querySelector('.location').innerHTML = dropDownTemp({locationOption: artistList});
 
 document.querySelector('.genre').innerHTML = dropDownTemp({genreOption: artistList});
+
+function uniqueLocation() {
+    var uniqLocation = [];
+    var locationMap = {};
+    for (var i=0;i<artistList.length;i++){
+        var artists = artistList[i];
+        if (locationMap[artists.artistLocation] === undefined){
+            locationMap[artists.artistLocation] =  artists.artistLocation;
+            uniqLocation.push(artists.artistLocation)
+        }
+    }
+document.querySelector('.location').innerHTML = dropDownTemp({locationOption: uniqLocation});
+}
+uniqueLocation();
+
+function uniqueGenre() {
+    var uniqGenre = [];
+    var genreMap = {};
+    for (var i=0;i<artistList.length;i++){
+        var genres = artistList[i];
+        if (genreMap[genres.artistGenre] === undefined){
+            genreMap[genres.artistGenre] =  genres.artistLocation;
+            uniqGenre.push(genres.artistGenre)
+        }
+    }
+document.querySelector('.genre').innerHTML = dropDownTemp({genreOption: uniqGenre});
+}
+uniqueGenre();
 
 var locateBtn = document.querySelector('.locateBtn');
 locateBtn.addEventListener('click', function () {
