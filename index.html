@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            My Nearest Artist
+        </title>
+        <link rel = 'stylesheet' type = 'text/css' href = 'my_Artist.css'>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    </head>
+<body>
+<script class = 'dropDowns' type = 'text/handlebars-x'>
+    <datalist id = 'locationList'>
+        {{#each locationOption}}
+        <option>
+            {{artistLocation}}
+        </option>
+        {{/each}}
+    </datalist>
+    <datalist id = 'genreList'>
+        {{#each genreOption}}
+        <option>
+            {{artistGenre}}
+        </option>
+        {{/each}}
+    </datalist>
+</script>
+<script class = 'tableTemp' type = 'text/handlebars-x'>
+    <table>
+            <thead>
+                <th>Name of Artist</th>
+                <th>Location of Artist</th>
+                <th>Artist Genre</th>
+                <th>Charges per hour</th>
+                <th>Cell/Whatsapp</th>
+                <th>Email</th>
+            </thead>
+            <tbody>
+            {{#each artist}}
+                <tr>
+                    <td>{{artistName}}</td>
+                    <td>{{artistLocation}}</td>
+                    <td>{{artistGenre}}</td>
+                    <td>{{artistCharges}}</td>
+                    <td>{{artistCell}}</td>
+                    <td>{{artistEmail}}</td>
+                </tr>
+            {{else}}
+            <tr>
+                <td colspan="5"><h1 align = 'center'>SORRY, WE CAN NOT LOCATE ANY ARTIST IN YOUR AREA</h1></td>    
+            </tr>
+            {{/each}}
+            </tbody>
+        </table>
+</script>
+
+<div class = 'page'>
+    <h2>Select your location:</h2>
+    <input type = 'text' class = 'location' list = 'locationList' placeholder = 'City, surbub'>
+    <hr>
+    <h2>Select a genre:</h2>
+    <select type = 'text' class = 'genre' list = 'genreList' placeholder = 'Required music genre'></select>
+    <hr>
+    <button class = 'locateBtn'>Locate Artist</button>
+    <button class = 'showAll'>Show All Artists</button>
+</div>
+
+<div class = 'myTable'>
+
+</div>
+<hr>
+<button class = 'signUp'>Sign Up</button>
+<hr>
+    
+<footer>
+    <h1>Genre Samples</h1>
+    <h4>Deep House:</h4>
+<iframe frameborder="0" width="100%" height="240" scrolling="no" src="https://embed.traxsource.com/player/track/4218170"></iframe>
+    <h4>Soulful House</h4>
+<iframe frameborder="0" width="100%" height="240" scrolling="no" src="https://embed.traxsource.com/player/track/2973736"></iframe>
+</footer>
+    
+</body>
+    <script src = 'my_Artist.js' charset = 'utf-8'></script>
+</html>
