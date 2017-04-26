@@ -6,7 +6,7 @@ var artistList = [
         artistGenre: 'Soulful House',
         artistCell: '000 000 0000',
         artistEmail: 'lkg@mail.com'
-    },    
+    },
     {
         artistName: 'King Gideon',
         artistLocation: 'Cape Town, Belhar',
@@ -42,6 +42,7 @@ var tableTemp = Handlebars.compile(tableTemplate);
 document.querySelector('.genre').innerHTML = dropDownTemp({genreOption: artistList});
 
 function uniqueLocation() {
+    'use strict';
     var uniqLocation = [];
     var locationMap = {};
     for (var i=0;i<artistList.length;i++){
@@ -92,4 +93,3 @@ var showAll = document.querySelector('.showAll');
 showAll.addEventListener('click', function () {
     document.querySelector('.myTable').innerHTML = tableTemp({artist: artistList});
 });
-
