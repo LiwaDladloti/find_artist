@@ -3,7 +3,7 @@ body {
 }
 table {
     border-collapse: collapse;
-    width: 75%;
+    width: 100%;
 }
 th {
     background: #999;
