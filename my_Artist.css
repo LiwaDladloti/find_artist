@@ -1,6 +1,13 @@
 body {
     text-align: center;
 }
-table, th, td {
-    border: solid;
+table {
+    border-collapse: collapse;
+    width: 50%;
+}
+th {
+    background: #999;
+}
+th, td {
+    padding: 15px;
 }
